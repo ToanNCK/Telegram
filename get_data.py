@@ -49,6 +49,8 @@ def get_data_group(client, phone):
                 'group_id': str(group.id),
                 'access_hash': str(group.access_hash),
                 'title': str(group.title),
+                'username': str(group.username),
+                'participants_count': group.participants_count
             }
             results.append(tmp)
 
