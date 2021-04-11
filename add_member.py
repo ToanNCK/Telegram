@@ -72,6 +72,7 @@ def add_member(input_config, output_config, root_path_config, start_time_config,
             print(phone + ' login fail')
 
     filter_clients = []
+    log_clients = ""
 
     for my_client in clients:
         phone = my_client['phone']
@@ -180,11 +181,23 @@ def add_member(input_config, output_config, root_path_config, start_time_config,
             continue
         except UserPrivacyRestrictedError:
             print("Error Privacy")
-        except:
-            print("Error other")
-        # break
+        except Exception as e:
+            log_clients += str(e) + "\nError other " + current_client['phone'] + "\n"
+            print("Error other: ")
+            traceback.print_exc()
+            if current_client['phone'] != "+84585771080":
+                print("remove client: " + current_client['phone'])
+                client.disconnect()
+                
+            filter_clients.remove(current_client)
+            continue
+            #break
 
         i += 1
+
+    with open(root_path_config + '/' + output_config + '_log.txt', 'w') as l:
+        l.write(log_clients)
+        l.close()
 
     with open(root_path_config + '/' + output_config + '.txt', 'w') as g:
         g.write(str(i))
@@ -201,7 +214,8 @@ root_path = os.path.dirname(os.path.abspath(__file__))
 print(root_path)
 start_time = datetime.datetime.now()
 folder_session = 'session/'
-add_member('config_en.json', 'current_count', root_path, start_time, folder_session)
+
 add_member('config_vn.json', 'current_count_vn', root_path, start_time, folder_session)
+# add_member('config_en.json', 'current_count', root_path, start_time, folder_session)
 
 
