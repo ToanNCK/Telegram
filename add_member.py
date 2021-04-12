@@ -216,6 +216,6 @@ start_time = datetime.datetime.now()
 folder_session = 'session/'
 
 add_member('config_vn.json', 'current_count_vn', root_path, start_time, folder_session)
-# add_member('config_en.json', 'current_count', root_path, start_time, folder_session)
+add_member('config_en.json', 'current_count', root_path, start_time, folder_session)
 
 
