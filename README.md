@@ -11,9 +11,6 @@ Use `python 3` to add member from Group A to Group B (migrate member of your gro
 
 https://www.wikihow.com/Convert-a-Telegram-Group-to-a-Supergroup-on-PC-or-Mac
 
-![Supper group](images/note_tele.png)
-![Upgraded Supper group](images/note_tele2.png)
-
 ## Guide line
 
 * Step 1: Install package `telethon`
