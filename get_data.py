@@ -104,7 +104,7 @@ def get_data_user(client, group):
         json.dump(results, f, indent=4, ensure_ascii=False)
 
 
-with open('configs/config.json', 'r', encoding='utf-8') as f:
+with open('configs/config_data.json', 'r', encoding='utf-8') as f:
     config = json.loads(f.read())
 
 accounts = config['accounts']

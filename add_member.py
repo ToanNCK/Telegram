@@ -14,11 +14,13 @@ import asyncio
 
 logging.basicConfig(level=logging.WARNING)
 
-root_path = os.path.dirname(os.path.abspath(__file__))
+root_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 print(root_path)
 start_time = datetime.datetime.now()
 print((start_time + timedelta(days=-3)).strftime("%Y%m%d"))
 folder_session = 'session/'
+folder_log = 'log/'
+folder_configs = 'configs/'
 
 
 def get_group_by_id(groups, group_id):
@@ -55,7 +57,7 @@ async def client_message(client_ms, param_link_souces):
 
 
 def add_member(input_config, output_config):
-    with open('configs' + input_config, 'r', encoding='utf-8') as f:
+    with open(folder_configs + input_config, 'r', encoding='utf-8') as f:
         config = json.loads(f.read())
 
     accounts = config['accounts']
@@ -133,7 +135,7 @@ def add_member(input_config, output_config):
     count_add = 0
 
     try:
-        with open(root_path + '/log/' + output_config + '.txt') as f:
+        with open(root_path + folder_log + output_config + '.txt') as f:
             previous_count = int(f.read())
     except Exception as e:
         pass
@@ -159,7 +161,7 @@ def add_member(input_config, output_config):
         total_client = filter_clients.__len__()
         print("remain client: " + str(total_client))
         if total_client == 0:
-            with open(root_path + '/log/' + output_config + '.txt', 'w') as g:
+            with open(root_path + folder_log + output_config + '.txt', 'w') as g:
                 g.write(str(i))
                 g.close()
 
@@ -222,11 +224,11 @@ def add_member(input_config, output_config):
 
         i += 1
 
-    with open(root_path + '/log/' + output_config + '_log.txt', 'w') as l:
+    with open(root_path + folder_log + output_config + '_log.txt', 'w') as l:
         l.write(log_clients)
         l.close()
 
-    with open(root_path + '/log/' + output_config + '.txt', 'w') as g:
+    with open(root_path + folder_log + output_config + '.txt', 'w') as g:
         g.write(str(i))
         g.close()
     print("disconnect")
@@ -238,6 +240,6 @@ def add_member(input_config, output_config):
 
 
 # 15 acc
-add_member('config_en.json', 'current_count')
+#add_member('config_en.json', 'current_count_en')
 # 10 acc
 add_member('config_vn.json', 'current_count_vn')

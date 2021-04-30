@@ -1,0 +1,30 @@
+{
+    "folder_session": "session/",
+    "folder_log": "log/",
+    "folder_configs": "configs/",
+    "strftime": "%Y%m%d",
+    "check_phone": [
+        "+84585771080",
+        "+84567327859"
+    ],
+    "check_phone_id": [
+        1493876353,
+        1462433287
+    ],
+    "disconnect_remove_client": 20,
+    "count_add_sleep": 35,
+    "count_add_max": 500,
+    "link_souces": [
+        "https://t.me/fx_phonix",
+        "https://t.me/fx_phonix_free"
+    ],
+    "error_continue": [
+        "One of the users you tried to add is already in too many channels/supergroups (caused by InviteToChannelRequest)",
+        "The provided user is not a mutual contact (caused by InviteToChannelRequest)"
+    ],
+    "type_file": ["_log.txt", ".txt", ".json"],
+    "default_config": [
+        { "input": "config_en", "output": "current_count_en" },
+        { "input": "config_vn", "output": "current_count_vn" }
+    ]
+}

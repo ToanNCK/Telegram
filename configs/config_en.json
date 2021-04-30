@@ -30,6 +30,24 @@
             "api_id": 5202712,
             "api_hash": "3da4e67c210ac7b045f2965676c84e70",
             "ban": true
+        },
+        {
+            "phone": "+840565461834",
+            "api_id": 5867756,
+            "api_hash": "f90611ec6a07e256ec27b2d5833e016c",
+            "ban": true
+        },
+        {
+            "phone": "+840565461840",
+            "api_id": 5847792,
+            "api_hash": "2d0027d3d59c7a204184977dda46119d",
+            "ban": true
+        },
+        {
+            "phone": "+840565463153",
+            "api_id": 5046836,
+            "api_hash": "40188aa0c499afd9950eb7adcd9439b5",
+            "ban": true
         }
     ]
 }
