@@ -18,7 +18,7 @@ folder_session = 'session/'
 
 # Thêm user vào channel vip
 async def client_channel_phonix_vip(client_channel):
-    await client_channel(ImportChatInviteRequest('3skfIIp18dU1MmQ1'))
+    await client_channel(ImportChatInviteRequest('NCggYO4QaQE3YTI1'))
 
 # Thêm user vào group free
 async def client_channel_phonix_free(client_channel):
@@ -45,7 +45,7 @@ async def main(param_client, param_link_souces):
 
 
 def add_member_channel(config_json, client_link_souces):
-    with open(config_json, 'r', encoding='utf-8') as f:
+    with open('configs/' + config_json, 'r', encoding='utf-8') as f:
         config = json.loads(f.read())
     accounts = config['accounts']
     print("Total account: " + str(len(accounts)))
@@ -53,7 +53,7 @@ def add_member_channel(config_json, client_link_souces):
         api_id = account['api_id']
         api_hash = account['api_hash']
         phone = account['phone']
-        if phone != "+84585771080":
+        if phone != "+84585771080" and phone != "+84567327859":
             try:
                 client = TelegramClient(folder_session + phone, api_id, api_hash)
                 client.connect()

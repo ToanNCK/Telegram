@@ -1,0 +1,47 @@
+{
+    "group_target": 1462433287,
+    "group_source": 1144805434,
+    "accounts": [{
+            "phone": "+84567327859",
+            "api_id": 2641186,
+            "api_hash": "e4ebf70b5b8535b794c3032dd7ecf9db",
+            "ban": false
+        },
+        {
+            "phone": "+840567327858",
+            "api_id": 5769671,
+            "api_hash": "6893fbb4cd4bfd06ec9a93d841be13d1",
+            "ban": false
+        },
+        {
+            "phone": "+840565461423",
+            "api_id": 5145537,
+            "api_hash": "ee738827092e418651c648a595b61aa0",
+            "ban": true
+        },
+        {
+            "phone": "+840565461422",
+            "api_id": 5348303,
+            "api_hash": "d7a22ed7664cd900b0e9d6ffa3d98857",
+            "ban": false
+        },
+        {
+            "phone": "+840565464300",
+            "api_id": 4485007,
+            "api_hash": "373a226a721d3cf67f1b6b7987acb97b",
+            "ban": true
+        },
+        {
+            "phone": "+840565461821",
+            "api_id": 4667249,
+            "api_hash": "08540026b88119180d4127179fb0ebc2",
+            "ban": true
+        },
+        {
+            "phone": "+840565463156",
+            "api_id": 4520461,
+            "api_hash": "010571b968adb1a5b766513fa08d8c2e",
+            "ban": true
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "accounts": [{
+            "phone": "+840567326601",
+            "api_id": 5541093,
+            "api_hash": "7e12c8fac9db3c6dc509ee4b2a58ee02"
+        },
+        {
+            "phone": "+840567327858",
+            "api_id": 5769671,
+            "api_hash": "6893fbb4cd4bfd06ec9a93d841be13d1"
+        },
+        {
+            "phone": "+840567326623",
+            "api_id": 4028000,
+            "api_hash": "a8a59beebc0a401ed1cfdb675261384c"
+        },
+        {
+            "phone": "+840567343519",
+            "api_id": 4227071,
+            "api_hash": "14ab063b9df3ad966df18f47b01b21dd"
+        }
+    ]
+}

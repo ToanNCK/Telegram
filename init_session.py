@@ -3,7 +3,7 @@ import logging
 from telethon import sync, TelegramClient, events
 import json
 
-with open('config_session.json', 'r') as f:
+with open('configs/config_session.json', 'r') as f:
 	config = json.loads(f.read())
 
 logging.basicConfig(level=logging.WARNING)

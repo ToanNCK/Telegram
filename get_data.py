@@ -89,11 +89,13 @@ def get_data_user(client, group):
                     date_online = user.status.was_online
 
                 date_online_str = date_online.strftime("%Y%m%d")
+
+            
             tmp = {
                 'user_id': str(user.id),
                 'access_hash': str(user.access_hash),
                 'username': str(user.username),
-                "date_online": date_online_str
+                'date_online': date_online_str,
             }
             results.append(tmp)
         except:
@@ -102,7 +104,7 @@ def get_data_user(client, group):
         json.dump(results, f, indent=4, ensure_ascii=False)
 
 
-with open('config.json', 'r', encoding='utf-8') as f:
+with open('configs/config.json', 'r', encoding='utf-8') as f:
     config = json.loads(f.read())
 
 accounts = config['accounts']
@@ -113,5 +115,6 @@ for account in accounts:
     api_id = account['api_id']
     api_hash = account['api_hash']
     phone = account['phone']
-    print(phone)
-    get_group(phone, api_id, api_hash)
+    if phone != "+84585771080" and phone != "+84567327859":
+        print(phone)
+        get_group(phone, api_id, api_hash)
