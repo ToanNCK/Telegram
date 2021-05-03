@@ -12,10 +12,13 @@ folder_session = 'session/'
 
 
 async def send_bot(_client):
-    spambot = await _client.get_entity('@SpamBot')
-    await _client.send_message(spambot, '/start')
-    messages = await _client.get_messages(spambot, limit=2)
-    return not messages[1].message == 'Good news, no limits are currently applied to your account. You’re free as a bird!'
+    try:
+        spambot = await _client.get_entity('@SpamBot')
+        await _client.send_message(spambot, '/start')
+        messages = await _client.get_messages(spambot, limit=2)
+        return not messages[1].message == 'Good news, no limits are currently applied to your account. You’re free as a bird!'
+    except Exception as e:
+        return True
 
 
 def main(_config):
@@ -40,7 +43,7 @@ def main(_config):
 
         client.disconnect()
 
-    with open('configs/config_test.json', 'w', encoding='utf-8') as f:
+    with open('configs/' + _config + '.json', 'w', encoding='utf-8') as f:
         json.dump(config, f, indent=4, ensure_ascii=False)
     print('---------------- End ' + _config + ' !(O~0)! ----------------')
 
