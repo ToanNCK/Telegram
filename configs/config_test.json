@@ -1,8 +1,10 @@
 {
-    "accounts": [{
-        "phone": "+84567327859",
-        "api_id": 2641186,
-        "api_hash": "e4ebf70b5b8535b794c3032dd7ecf9db",
-        "ban": false
-    }]
+    "accounts": [
+        {
+            "phone": "+840567326601",
+            "api_id": 5541093,
+            "api_hash": "7e12c8fac9db3c6dc509ee4b2a58ee02",
+            "ban": true
+        }
+    ]
 }

@@ -1,0 +1,6 @@
+Chat admin privileges are required to do that in the specified chat (for example, to send a message in a channel which is not yours), or invalid permissions used for the channel or group (caused by InviteToChannelRequest)
+Error other +840565463129
+Chat admin privileges are required to do that in the specified chat (for example, to send a message in a channel which is not yours), or invalid permissions used for the channel or group (caused by InviteToChannelRequest)
+Error other +840567326601
+A wait of 39779 seconds is required (caused by InviteToChannelRequest)
+Error other +840565461539

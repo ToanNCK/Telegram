@@ -1,0 +1,123 @@
+{
+    "group_target": 1462433287,
+    "group_source": 1302449846,
+    "accounts": [{
+            "phone": "+84567327859",
+            "api_id": 2641186,
+            "api_hash": "e4ebf70b5b8535b794c3032dd7ecf9db",
+            "ban": false
+        },
+        {
+            "phone": "+840565466712",
+            "api_id": 5455111,
+            "api_hash": "2743684b80adb54ea60a2a6c3dc30efe",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463743",
+            "api_id": 4322492,
+            "api_hash": "3901947091531ac70fbfa8fe80d7c80d",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466246",
+            "api_id": 4565797,
+            "api_hash": "712ca893f401a8ceb34f80e21ed4ce9a",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463593",
+            "api_id": 5726248,
+            "api_hash": "1fac6101a5587598446730bdca1e5a4a",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565488316",
+            "api_id": 5909718,
+            "api_hash": "16111a7415694d1937a454a10bbb6793",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466172",
+            "api_id": 4548384,
+            "api_hash": "5aa9ee585904dea84b1cfa1e0e32f4f9",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565464313",
+            "api_id": 5172423,
+            "api_hash": "1c647f94f08bc63c6b10f3d22f970a97",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463744",
+            "api_id": 4108342,
+            "api_hash": "931a53595fe9275d12cb187b421f99de",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565462402",
+            "api_id": 4657024,
+            "api_hash": "011151c0ea0281371366a232fe4ed4ac",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466080",
+            "api_id": 4255362,
+            "api_hash": "06b89d0b76c695e8416339c3347f76a1",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466238",
+            "api_id": 4692137,
+            "api_hash": "309a7cbe23ff47c9cae8ee9321406554",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840569895312",
+            "api_id": 5809191,
+            "api_hash": "500d8e43355f657bd3b60c02adc00c06",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565487579",
+            "api_id": 4630341,
+            "api_hash": "9d13b1c962f32147cc873b54ddd7b6b0",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565462395",
+            "api_id": 4786997,
+            "api_hash": "336f2ecd767b997402a7abd9b04938d1",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466713",
+            "api_id": 4997151,
+            "api_hash": "54b19a69efe29617d2bc85b652e6c5d9",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565462393",
+            "api_id": 5591223,
+            "api_hash": "ae4dcc6a2783541b698ead71f47b4ab6",
+            "ban": false,
+            "read_message": true
+        }
+    ]
+}

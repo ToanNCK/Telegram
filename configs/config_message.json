@@ -52,6 +52,13 @@
             "api_id": 4520461,
             "api_hash": "010571b968adb1a5b766513fa08d8c2e",
             "ban": true
+        },
+        {
+            "phone": "+840565461457",
+            "api_id": 4477447,
+            "api_hash": "5b0fc659921647995e9e80224f2aa80c",
+            "ban": false,
+            "read_message": true
         }
     ]
 }

@@ -1,0 +1,75 @@
+{
+    "group_target": 1485927933,
+    "group_source": 1344573243,
+    "accounts": [
+        {
+            "phone": "+84567327859",
+            "api_id": 2641186,
+            "api_hash": "e4ebf70b5b8535b794c3032dd7ecf9db",
+            "ban": false
+        },
+        {
+            "phone": "+840565466078",
+            "api_id": 4945863,
+            "api_hash": "8300657a85d0b96cba4d62b3904f06c8",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463739",
+            "api_id": 4593662,
+            "api_hash": "8cd92d8bbb364ab9b196464479884d09",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565462392",
+            "api_id": 3189014,
+            "api_hash": "1d0013fc9a6b737f709ec1bb485fac08",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466338",
+            "api_id": 5232160,
+            "api_hash": "880566547a85f81cbc54f71fcb1ae87e",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840569887046",
+            "api_id": 5475693,
+            "api_hash": "86ef4a02cefb763473f74adc45696e30",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466485",
+            "api_id": 5658638,
+            "api_hash": "f583d10b2bc7754dd612ab5137b3300b",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565466113",
+            "api_id": 5598823,
+            "api_hash": "1e3dd9f0bf1f4c5eb4421ddb4702013c",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463738",
+            "api_id": 4257661,
+            "api_hash": "3c7bc214ea1c13970a9efc6aa81938a5",
+            "ban": false,
+            "read_message": true
+        },
+        {
+            "phone": "+840565463732",
+            "api_id": 5147751,
+            "api_hash": "a1993b3033a9268905cd9e41c31afd6b",
+            "ban": false,
+            "read_message": true
+        }
+    ]
+}

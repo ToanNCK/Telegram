@@ -20,7 +20,6 @@ with open('const.json', 'r', encoding='utf-8') as f:
     consts = json.loads(f.read())
 
 start_time = datetime.datetime.now()
-print((start_time + timedelta(days=-3)).strftime(consts['strftime']))
 folder_session = consts['folder_session']
 folder_log = consts['folder_log']
 folder_configs = consts['folder_configs']
@@ -47,9 +46,9 @@ def check_phone(is_phone):
         return False
 
 
-async def client_message(client_ms, param_link_souces):
-    for param_link_souce in param_link_souces:
-        channel = await client_ms.get_entity(param_link_souce)
+async def client_message(client_ms, input_peer_channels):
+    for input_peer_channel in input_peer_channels:
+        channel = InputPeerChannel(input_peer_channel['id'], input_peer_channel['access_hash'])
         messages = await client_ms.get_messages(channel, limit=None)
         messagesClear = []
         for x in messages:
@@ -70,7 +69,7 @@ def add_member(input_config, output_config):
     # group source
     group_source_id = config['group_source']
     # date_online_from
-    from_date_active = (start_time + timedelta(days=-3)
+    from_date_active = (start_time + timedelta(days=-consts['day_active'])
                         ).strftime(consts['strftime'])
     # list client
     clients = []
@@ -213,10 +212,9 @@ def add_member(input_config, output_config):
             print('sleep: ' + str(120 / total_client))
             time.sleep(120 / total_client)
 
-            loop = asyncio.get_event_loop()
-            loop.run_until_complete(client_message(
-                is_client_message, consts['link_souces']))
-            print('delete message Add member' + user['user_id'] + ' success')
+            # loop = asyncio.get_event_loop()
+            # loop.run_until_complete(client_message(is_client_message, consts['input_peer_channel']))
+            # print('delete message Add member' + user['user_id'] + ' success')
 
         except PeerFloodError as e:
             print("Error Fooling cmnr")
@@ -255,11 +253,23 @@ def add_member(input_config, output_config):
     print("total time: " + str(end_time - start_time))
 
 
+index_group = 0
+dem = 0
 for default_config in consts['default_config']:
-    add_member(default_config['input'] +
-               consts['type_file'][2], default_config['output'])
+    if start_time.strftime(consts['strftime']) == default_config['expire_time'] and default_config['index_group'] == index_group:
+        els = [x for x in consts['default_config'] if x['index_group'] == index_group]
+        default_config['expire_time'] = (start_time + timedelta(days=+int(len(els) / 2))).strftime(consts['strftime'])
+        dem = dem + 1
+        if dem == len([x for x in consts['default_config'] if x['index_group'] == index_group and datetime.datetime.now().strftime(consts['strftime']) == x['expire_time']]):
+            index_group = index_group + 1
+        print(default_config['expire_time'])
+        add_member(default_config['input'] + consts['type_file'][2], default_config['output'])
+        exec(open("clear_message.py").read())
+# Ghi lại file const sau khi chạy xong
+with open('const.json', 'w', encoding='utf-8') as f:
+    json.dump(consts, f, indent=4, ensure_ascii=False)
 
 # # 15 acc
-# add_member('config_en.json', 'current_count_en')
+# add_member('config_en_1.json', 'current_count_en_1')
 # # 10 acc
 # add_member('config_vn.json', 'current_count_vn')

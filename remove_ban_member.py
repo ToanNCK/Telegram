@@ -87,43 +87,60 @@ def get_data_user(client, group):
                 continue
             else:
                 if isinstance(user.status, UserStatusLastMonth):
-                    date_online = last_month
+                    get_data_member(results, last_month, user)
                 if isinstance(user.status, UserStatusLastWeek):
-                    date_online = last_week
+                    get_data_member(results, last_week, user)
                 if isinstance(user.status, UserStatusOffline):
-                    continue
-                date_online_str = date_online.strftime("%Y%m%d")
+                    date_convert = datetime.strptime(user.status.was_online.strftime("%Y%m%d"), "%Y%m%d")
+                    if date_convert < last_month:
+                        get_data_member(results, user.status.was_online, user)
 
-            tmp = {
-                'user_id': str(user.id),
-                'access_hash': str(user.access_hash),
-                'username': str(user.username),
-                'date_online': date_online_str,
-            }
-            results.append(tmp)
-        except:
+        except Exception as e:
             print("Error get user")
+            print(str(e))
     with open(path_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
 
+def get_data_member(results, date_online, user):
+    date_online_str = date_online.strftime("%Y%m%d")
+    tmp = {
+        'user_id': str(user.id),
+        'access_hash': str(user.access_hash),
+        'username': str(user.username),
+        'date_online': date_online_str,
+    }
+
+    results.append(tmp)
+
+
 def remove_member(client, group):
     dem = 0
-    channel = client.get_entity(group.username)
-    with open('data_remove/user/' + phone + "_" + str(group.id) + '.json', 'r', encoding='utf-8') as f:
-        users = json.loads(f.read())
-    for user in users:
-        user_to_ban = InputPeerUser(
-            int(user['user_id']), int(user['access_hash']))
-        client(EditBannedRequest(
-            channel, user_to_ban, ChatBannedRights(
-                until_date=None,
-                view_messages=True
-            )
-        ))
-        dem += 1
-        if dem >= 150:
-            break
+    try:
+        channel = client.get_entity(group.username)
+        with open('data_remove/user/' + phone + "_" + str(group.id) + '.json', 'r', encoding='utf-8') as f:
+            users = json.loads(f.read())
+        print(len(users))
+        if len(users) > 0:
+            for user in users:
+                try:
+                    user_to_ban = InputPeerUser(
+                        int(user['user_id']), int(user['access_hash']))
+                    client(EditBannedRequest(
+                        channel, user_to_ban, ChatBannedRights(
+                            until_date=None,
+                            view_messages=True
+                        )
+                    ))
+                    dem += 1
+                    if dem >= 150:
+                        break
+                except:
+                    print("Error remove_member for user")
+
+    except:
+        print("Error remove_member channel")
+
     # delete 150 member nghỉ 15 phút
 
 

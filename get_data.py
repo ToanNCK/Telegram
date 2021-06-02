@@ -8,10 +8,14 @@ import json
 from datetime import datetime, timedelta
 
 logging.basicConfig(level=logging.WARNING)
+with open('const.json', 'r', encoding='utf-8') as f:
+    consts = json.loads(f.read())
+
+get_data_consts = consts['get_data']
 
 
 def get_group(phone, api_id, api_hash):
-    folder_session = 'session/'
+    folder_session = consts['folder_session']
     client = TelegramClient(folder_session + phone, api_id, api_hash)
     client.connect()
     if not client.is_user_authorized():
@@ -59,7 +63,7 @@ def get_data_group(client, phone):
         except Exception as e:
             print(e)
             print('error save group')
-    with open('data/group/' + phone + '.json', 'w', encoding='utf-8') as f:
+    with open(get_data_consts['data_group'] + phone + consts['type_file'][2], 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
 
@@ -72,7 +76,8 @@ def get_data_user(client, group):
     today = datetime.now()
     last_week = today + timedelta(days=-7)
     last_month = today + timedelta(days=-30)
-    path_file = 'data/user/' + phone + "_" + group_id + '.json'
+    path_file = get_data_consts['data_user'] + \
+        phone + "_" + group_id + consts['type_file'][2]
 
     for user in all_participants:
         # print(user)
@@ -88,9 +93,8 @@ def get_data_user(client, group):
                 if isinstance(user.status, UserStatusOffline):
                     date_online = user.status.was_online
 
-                date_online_str = date_online.strftime("%Y%m%d")
+                date_online_str = date_online.strftime(consts['strftime'])
 
-            
             tmp = {
                 'user_id': str(user.id),
                 'access_hash': str(user.access_hash),
@@ -104,17 +108,17 @@ def get_data_user(client, group):
         json.dump(results, f, indent=4, ensure_ascii=False)
 
 
-with open('configs/config_data.json', 'r', encoding='utf-8') as f:
+with open(consts['folder_configs'] + get_data_consts['config_data'] + consts['type_file'][2], 'r', encoding='utf-8') as f:
     config = json.loads(f.read())
 
 accounts = config['accounts']
 
-folder_session = 'session/'
+folder_session = consts['folder_session']
 
 for account in accounts:
     api_id = account['api_id']
     api_hash = account['api_hash']
     phone = account['phone']
-    if phone != "+84585771080" and phone != "+84567327859":
+    if phone != consts['check_phone'][0] and phone != consts['check_phone'][1]:
         print(phone)
         get_group(phone, api_id, api_hash)

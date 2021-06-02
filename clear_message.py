@@ -5,14 +5,15 @@ import json
 import asyncio
 from telethon.tl import functions, types
 
-with open('configs/config_message.json', 'r') as f:
+logging.basicConfig(level=logging.WARNING)
+with open('const.json', 'r', encoding='utf-8') as f:
+    consts = json.loads(f.read())
+
+with open(consts['folder_configs'] + consts['clear_message']['config_message'] + consts['type_file'][2], 'r') as f:
     config = json.loads(f.read())
 
-logging.basicConfig(level=logging.WARNING)
-
 accounts = config['accounts']
-
-folder_session = 'session/'
+folder_session = consts['folder_session']
 
 for account in accounts:
     api_id = account['api_id']
@@ -38,14 +39,15 @@ async def main(param_link_souces):
         messagesClear = []
         # then if you want to get all the messages message
         for x in messages:
-            if (x.peer_id.channel_id == 1493876353 or x.peer_id.channel_id == 1462433287) and x.message == None:
+            if (x.peer_id.channel_id == consts['check_phone_id'][0] or x.peer_id.channel_id == consts['check_phone_id'][1]) and x.message == None:
                 # print(x.message == None)  # return message.text
                 messagesClear.append(x)
 
         await client.delete_messages(channel, messagesClear)
-            
+
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main(['https://t.me/fx_phonix','https://t.me/fx_phonix_free']))
+loop.run_until_complete(main(consts['link_souces']))
+# loop.run_until_complete(main(['https://t.me/fx_phonix', 'https://t.me/fx_phonix_free']))
 
 client.disconnect()

@@ -8,74 +8,44 @@
         "+84567327859"
     ],
     "check_phone_id": [
-        1485927933,
+        1493876353,
         1462433287
     ],
-    "day_active": 7,
     "disconnect_remove_client": 20,
     "count_add_sleep": 35,
     "count_add_max": 500,
     "link_souces": [
-        "https://t.me/fx_phonix_free",
-        "https://t.me/fx_phonix_biuld"
-    ],
-    "input_peer_channel": [
-        {
-            "id": 1462433287,
-            "access_hash": 8488007793499786387
-        },
-        {
-            "id": 1485927933,
-            "access_hash": 1938851854119564210
-        }
+        "https://t.me/fx_phonix",
+        "https://t.me/fx_phonix_free"
     ],
     "error_continue": [
         "One of the users you tried to add is already in too many channels/supergroups (caused by InviteToChannelRequest)",
-        "The provided user is not a mutual contact (caused by InviteToChannelRequest)",
-        "This user was kicked from this supergroup/channel (caused by InviteToChannelRequest)",
-        "Invalid object ID for a user. Make sure to pass the right types, for instance making sure that the request is designed for users or otherwise look for a different one more suited (caused by InviteToChannelRequest)"
+        "The provided user is not a mutual contact (caused by InviteToChannelRequest)"
     ],
     "type_file": [
         "_log.txt",
         ".txt",
         ".json"
     ],
-    "default_config": [
-        {
+    "default_config": [{
             "input": "config_en",
             "output": "current_count_en",
-            "expire_time": "20210604",
-            "index_group": 0
+            "expire_time": "20210521"
         },
         {
             "input": "config_vn",
             "output": "current_count_vn",
-            "expire_time": "20210602",
-            "index_group": 0
+            "expire_time": "20210521"
         },
         {
             "input": "config_en_1",
             "output": "current_count_en_1",
-            "expire_time": "20210603",
-            "index_group": 0
-        },
-        {
-            "input": "config_vn_1",
-            "output": "current_count_vn_1",
-            "expire_time": "20210603",
-            "index_group": 0
-        },
-        {
-            "input": "config_en_2",
-            "output": "current_count_en_2",
-            "expire_time": "20210603",
-            "index_group": 1
+            "expire_time": "20210522"
         },
         {
             "input": "config_vn_2",
-            "output": "current_count_vn_2",
-            "expire_time": "20210603",
-            "index_group": 1
+            "output": "current_count_vn_1",
+            "expire_time": "20210522"
         }
     ],
     "clear_message": {
